@@ -17,6 +17,7 @@
 		003A5B902839619600538D6E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B8F2839619600538D6E /* SearchViewController.swift */; };
 		00758993283CF44A001FE1F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 00758992283CF44A001FE1F5 /* Alamofire */; };
 		00758995283D40E7001FE1F5 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00758994283D40E7001FE1F5 /* SearchResponse.swift */; };
+		00758999283E9A79001FE1F5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00758998283E9A79001FE1F5 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		003A5B8B28395E0600538D6E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		003A5B8F2839619600538D6E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		00758994283D40E7001FE1F5 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		00758998283E9A79001FE1F5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				003A5B8B28395E0600538D6E /* MainTabBarController.swift */,
 				003A5B7928395D2F00538D6E /* SceneDelegate.swift */,
 				003A5B8F2839619600538D6E /* SearchViewController.swift */,
+				00758998283E9A79001FE1F5 /* NetworkService.swift */,
 				00758994283D40E7001FE1F5 /* SearchResponse.swift */,
 				003A5B7B28395D2F00538D6E /* ViewController.swift */,
 				003A5B7D28395D2F00538D6E /* Main.storyboard */,
@@ -161,6 +164,7 @@
 				003A5B7828395D2F00538D6E /* AppDelegate.swift in Sources */,
 				003A5B8C28395E0600538D6E /* MainTabBarController.swift in Sources */,
 				003A5B7A28395D2F00538D6E /* SceneDelegate.swift in Sources */,
+				00758999283E9A79001FE1F5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
