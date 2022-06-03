@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003A579F2849CCBE00113A28 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 003A579E2849CCBE00113A28 /* SDWebImage */; };
+		003A57A12849CCBE00113A28 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 003A57A02849CCBE00113A28 /* SDWebImageMapKit */; };
 		003A5B7828395D2F00538D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7728395D2F00538D6E /* AppDelegate.swift */; };
 		003A5B7A28395D2F00538D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7928395D2F00538D6E /* SceneDelegate.swift */; };
 		003A5B7C28395D2F00538D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7B28395D2F00538D6E /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		00CEFDD8283FE68000124273 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEFDD1283FE68000124273 /* SearchInteractor.swift */; };
 		00CEFDDB283FEA8200124273 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CEFDDA283FEA8200124273 /* SearchViewController.storyboard */; };
 		00CEFDDD283FEEA100124273 /* UIViewCotroller + StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEFDDC283FEEA100124273 /* UIViewCotroller + StoryBoard.swift */; };
+		00CEFDE1284494E300124273 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CEFDE0284494E300124273 /* TrackCell.xib */; };
+		00CEFDE32844952F00124273 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEFDE22844952F00124273 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,8 @@
 		00CEFDD1283FE68000124273 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		00CEFDDA283FEA8200124273 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		00CEFDDC283FEEA100124273 /* UIViewCotroller + StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewCotroller + StoryBoard.swift"; sourceTree = "<group>"; };
+		00CEFDE0284494E300124273 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		00CEFDE22844952F00124273 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003A579F2849CCBE00113A28 /* SDWebImage in Frameworks */,
+				003A57A12849CCBE00113A28 /* SDWebImageMapKit in Frameworks */,
 				00758993283CF44A001FE1F5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,9 +94,9 @@
 				003A5B7928395D2F00538D6E /* SceneDelegate.swift */,
 				00CEFDCB283FE5EC00124273 /* Services */,
 				003A5B8B28395E0600538D6E /* MainTabBarController.swift */,
+				0081CC652844C2C0005F9DA8 /* Models */,
 				00CEFDBC283FE4F500124273 /* Search */,
 				003A5B8F2839619600538D6E /* SearchMusicViewController.swift */,
-				00758994283D40E7001FE1F5 /* SearchResponse.swift */,
 				003A5B7B28395D2F00538D6E /* ViewController.swift */,
 				00CEFDDE283FEF3100124273 /* Helpers */,
 				003A5B7D28395D2F00538D6E /* Main.storyboard */,
@@ -99,9 +107,18 @@
 			path = "Music Player";
 			sourceTree = "<group>";
 		};
+		0081CC652844C2C0005F9DA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				00758994283D40E7001FE1F5 /* SearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		00CEFDBC283FE4F500124273 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				00CEFDDF284494C300124273 /* Cell */,
 				00CEFDDA283FEA8200124273 /* SearchViewController.storyboard */,
 				00CEFDD0283FE68000124273 /* SearchViewController.swift */,
 				00CEFDD1283FE68000124273 /* SearchInteractor.swift */,
@@ -129,6 +146,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		00CEFDDF284494C300124273 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00CEFDE0284494E300124273 /* TrackCell.xib */,
+				00CEFDE22844952F00124273 /* TrackCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +173,8 @@
 			name = "Music Player";
 			packageProductDependencies = (
 				00758992283CF44A001FE1F5 /* Alamofire */,
+				003A579E2849CCBE00113A28 /* SDWebImage */,
+				003A57A02849CCBE00113A28 /* SDWebImageMapKit */,
 			);
 			productName = "Music Player";
 			productReference = 003A5B7428395D2F00538D6E /* Music Player.app */;
@@ -178,6 +206,7 @@
 			mainGroup = 003A5B6B28395D2F00538D6E;
 			packageReferences = (
 				00758991283CF449001FE1F5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 003A5B7528395D2F00538D6E /* Products */;
 			projectDirPath = "";
@@ -194,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003A5B8428395D3300538D6E /* LaunchScreen.storyboard in Resources */,
+				00CEFDE1284494E300124273 /* TrackCell.xib in Resources */,
 				003A5B8128395D3300538D6E /* Assets.xcassets in Resources */,
 				00CEFDDB283FEA8200124273 /* SearchViewController.storyboard in Resources */,
 				003A5B7F28395D2F00538D6E /* Main.storyboard in Resources */,
@@ -212,6 +242,7 @@
 				00CEFDDD283FEEA100124273 /* UIViewCotroller + StoryBoard.swift in Sources */,
 				00758995283D40E7001FE1F5 /* SearchResponse.swift in Sources */,
 				00CEFDD8283FE68000124273 /* SearchInteractor.swift in Sources */,
+				00CEFDE32844952F00124273 /* TrackCell.swift in Sources */,
 				003A5B7828395D2F00538D6E /* AppDelegate.swift in Sources */,
 				003A5B8C28395E0600538D6E /* MainTabBarController.swift in Sources */,
 				00CEFDD4283FE68000124273 /* SearchWorker.swift in Sources */,
@@ -448,6 +479,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		00758991283CF449001FE1F5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -459,6 +498,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		003A579E2849CCBE00113A28 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		003A57A02849CCBE00113A28 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		00758992283CF44A001FE1F5 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00758991283CF449001FE1F5 /* XCRemoteSwiftPackageReference "Alamofire" */;
