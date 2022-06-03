@@ -22,6 +22,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     let searchController = UISearchController(searchResultsController: nil)
     private var searchViewModel = SearchViewModel.init(cells: [])
     private var timer: Timer?
+    
+    private lazy var footerView = FooterView()
   
   // MARK: Setup
   
@@ -62,18 +64,21 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
+        
+        table.tableFooterView = footerView
     }
   
   func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
       
       switch viewModel {
           
-      case .some:
-          print("viewController .some")
       case .displayTraks(let searchViewModel):
           print ("viewController .displayTraks")
           self.searchViewModel = searchViewModel
           table.reloadData()
+          footerView.hideLoader()
+      case .displayFooterView:
+          footerView.showLoader()
       }
 
   }
@@ -100,7 +105,22 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 84
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Please enter track name to start searching"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        return label
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return searchViewModel.cells.count > 0 ? 0 : 250
+        
+    }
 }
+
+// MARK: - UISearchBarDelegate
+
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
