@@ -10,6 +10,7 @@
 		003A579F2849CCBE00113A28 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 003A579E2849CCBE00113A28 /* SDWebImage */; };
 		003A57A12849CCBE00113A28 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 003A57A02849CCBE00113A28 /* SDWebImageMapKit */; };
 		003A57A4284A7A2200113A28 /* Footer View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A57A3284A7A2200113A28 /* Footer View.swift */; };
+		003A57A9284DA9F700113A28 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A57A8284DA9F700113A28 /* TrackDetailView.swift */; };
 		003A5B7828395D2F00538D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7728395D2F00538D6E /* AppDelegate.swift */; };
 		003A5B7A28395D2F00538D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7928395D2F00538D6E /* SceneDelegate.swift */; };
 		003A5B7C28395D2F00538D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A5B7B28395D2F00538D6E /* ViewController.swift */; };
@@ -31,10 +32,12 @@
 		00CEFDDD283FEEA100124273 /* UIViewCotroller + StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEFDDC283FEEA100124273 /* UIViewCotroller + StoryBoard.swift */; };
 		00CEFDE1284494E300124273 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CEFDE0284494E300124273 /* TrackCell.xib */; };
 		00CEFDE32844952F00124273 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEFDE22844952F00124273 /* TrackCell.swift */; };
+		00E59597284DB14E00A8DF1C /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E59596284DB14E00A8DF1C /* TrackDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		003A57A3284A7A2200113A28 /* Footer View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Footer View.swift"; sourceTree = "<group>"; };
+		003A57A8284DA9F700113A28 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		003A5B7428395D2F00538D6E /* Music Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003A5B7728395D2F00538D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003A5B7928395D2F00538D6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		00CEFDDC283FEEA100124273 /* UIViewCotroller + StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewCotroller + StoryBoard.swift"; sourceTree = "<group>"; };
 		00CEFDE0284494E300124273 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		00CEFDE22844952F00124273 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		00E59596284DB14E00A8DF1C /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,15 @@
 				003A57A3284A7A2200113A28 /* Footer View.swift */,
 			);
 			path = "Footer View";
+			sourceTree = "<group>";
+		};
+		003A57A5284DA9B400113A28 /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				00E59596284DB14E00A8DF1C /* TrackDetailView.xib */,
+				003A57A8284DA9F700113A28 /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
 			sourceTree = "<group>";
 		};
 		003A5B6B28395D2F00538D6E = {
@@ -128,6 +141,7 @@
 		00CEFDBC283FE4F500124273 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				003A57A5284DA9B400113A28 /* TrackDetailView */,
 				003A57A2284A7A0B00113A28 /* Footer View */,
 				00CEFDDF284494C300124273 /* Cell */,
 				00CEFDDA283FEA8200124273 /* SearchViewController.storyboard */,
@@ -234,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003A5B8428395D3300538D6E /* LaunchScreen.storyboard in Resources */,
+				00E59597284DB14E00A8DF1C /* TrackDetailView.xib in Resources */,
 				00CEFDE1284494E300124273 /* TrackCell.xib in Resources */,
 				003A5B8128395D3300538D6E /* Assets.xcassets in Resources */,
 				00CEFDDB283FEA8200124273 /* SearchViewController.storyboard in Resources */,
@@ -263,6 +278,7 @@
 				00CEFDD6283FE68000124273 /* SearchModels.swift in Sources */,
 				003A5B7A28395D2F00538D6E /* SceneDelegate.swift in Sources */,
 				00CEFDD3283FE68000124273 /* SearchPresenter.swift in Sources */,
+				003A57A9284DA9F700113A28 /* TrackDetailView.swift in Sources */,
 				00758999283E9A79001FE1F5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
