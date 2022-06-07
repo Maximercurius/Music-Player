@@ -160,7 +160,7 @@
                 <outlet property="currentTimeLabel" destination="IKf-jb-W6n" id="22c-pE-EM9"/>
                 <outlet property="durationLabel" destination="R5Y-E9-iJn" id="p9A-jw-FtN"/>
                 <outlet property="playPauseButton" destination="gNp-D4-vjR" id="2fM-PB-qds"/>
-                <outlet property="trackImageView" destination="KMl-nB-Vwx" id="Ged-09-6i6"/>
+                <outlet property="trackImageView" destination="KMl-nB-Vwx" id="NrQ-Vd-ecI"/>
                 <outlet property="trackTitleLabel" destination="bjz-EL-rkA" id="Wrh-Jt-eWU"/>
                 <outlet property="volumeSlider" destination="AAt-Ic-x7G" id="ksf-8p-tbr"/>
             </connections>
