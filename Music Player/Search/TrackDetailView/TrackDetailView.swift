@@ -78,7 +78,14 @@ class TrackDetailView: UIView {
             let durationTime = self?.player.currentItem?.duration
             let currentDurationText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toDisplayString()
             self?.durationLabel.text = "-\(currentDurationText)"
+            self?.updateCurrentTimeSlider()
         }
+    }
+    private func updateCurrentTimeSlider() {
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        let percentage = currentTimeSeconds / durationSeconds
+        self.currentTime.value = Float(percentage)
     }
     
     deinit {
@@ -101,12 +108,19 @@ class TrackDetailView: UIView {
         }, completion: nil)
     }
     
-    // MAKR: - @IBActions
+    // MARK: - @IBActions
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
+        let percentage = currentTime.value
+        guard let duration = player.currentItem?.duration else { return }
+        let duraionInSeconds = CMTimeGetSeconds(duration)
+        let seekTimeInSeconds = Float64(percentage) * duraionInSeconds
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
+        player.seek(to: seekTime)
     }
     
     @IBAction func handleVolumeSlider(_ sender: Any) {
+        player.volume = volumeSlider.value
     }
     @IBAction func dragDownButtonTapped(_ sender: Any) {
         self.removeFromSuperview()
