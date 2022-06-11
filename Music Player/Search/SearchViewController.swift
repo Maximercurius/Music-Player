@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SearchDisplayLogic: class {
+protocol SearchDisplayLogic: AnyObject {
   func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
 }
 
@@ -24,6 +24,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private var timer: Timer?
     
     private lazy var footerView = FooterView()
+    weak var  tabBarDelegate: MainTabBarControllerDelegate?
   
   // MARK: Setup
   
@@ -49,8 +50,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     super.viewDidLoad()
       
       setup()
-      setupSearchBar()
       setupTableView()
+      setupSearchBar()
   }
     private func setupSearchBar() {
         navigationItem.searchController = searchController
@@ -97,20 +98,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     
     let cellViewModel = searchViewModel.cells[indexPath.row]
-    print ("cellViewModel.previewUrl", cellViewModel.previewUrl)
+  //  print ("cellViewModel.previewUrl", cellViewModel.previewUrl)
     cell.trackImageView.backgroundColor = .red
     cell.set(viewModel: cellViewModel)
     return cell
 }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        print("cellViewModel.trackName", cellViewModel.trackName)
-        
-        let window = UIApplication.shared.keyWindow
-        let trackDetailsView = Bundle.main.loadNibNamed("TrackDetailView", owner: self, options: nil)?.first as! TrackDetailView
-        trackDetailsView.set(viewModel: cellViewModel)
-        window?.addSubview(trackDetailsView)
+        print("cellViewModel.trackName:", cellViewModel.trackName)
+        self.tabBarDelegate?.maximizeTrackDetailController(viewmodel: cellViewModel)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,7 +133,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
@@ -144,4 +141,40 @@ extension SearchViewController: UISearchBarDelegate {
         })
     }
 }
+
+extension SearchViewController: TrackMovingDelegate {
+    
+    private func getTrack(isForwardTrack: Bool) -> SearchViewModel.Cell? {
+        guard let indexPath = table.indexPathForSelectedRow else { return nil }
+        table.deselectRow(at: indexPath, animated: true)
+        var nextIndexPath: IndexPath!
+        if isForwardTrack {
+            nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if nextIndexPath.row == searchViewModel.cells.count {
+                nextIndexPath.row = 0
+            }
+        } else {
+            nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            if nextIndexPath.row == -1 {
+                nextIndexPath.row = searchViewModel.cells.count - 1
+            }
+        }
+        
+        table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
+        let cellViewModel = searchViewModel.cells[nextIndexPath.row]
+        return cellViewModel
+             
+    }
+    
+    func moveBackForPreviousTrack() -> SearchViewModel.Cell? {
+        return getTrack(isForwardTrack: false)
+    }
+    
+    func moveForwardForPreviousTrack() -> SearchViewModel.Cell? {
+        return getTrack(isForwardTrack: true)
+    }
+    
+    
+}
+
 
