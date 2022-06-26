@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		001BA2872858765D0080076D /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BA2862858765D0080076D /* Library.swift */; };
+		001BA289285BA8460080076D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BA288285BA8460080076D /* UserDefaults.swift */; };
+		001BA28C285CF8740080076D /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 001BA28B285CF8740080076D /* URLImage */; };
+		001BA28E285CF8740080076D /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 001BA28D285CF8740080076D /* URLImageStore */; };
 		003A579F2849CCBE00113A28 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 003A579E2849CCBE00113A28 /* SDWebImage */; };
 		003A57A12849CCBE00113A28 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 003A57A02849CCBE00113A28 /* SDWebImageMapKit */; };
 		003A57A4284A7A2200113A28 /* Footer View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A57A3284A7A2200113A28 /* Footer View.swift */; };
@@ -40,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		001BA2862858765D0080076D /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		001BA288285BA8460080076D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		003A57A3284A7A2200113A28 /* Footer View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Footer View.swift"; sourceTree = "<group>"; };
 		003A57A8284DA9F700113A28 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		003A5B7428395D2F00538D6E /* Music Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,8 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001BA28E285CF8740080076D /* URLImageStore in Frameworks */,
 				003A579F2849CCBE00113A28 /* SDWebImage in Frameworks */,
 				003A57A12849CCBE00113A28 /* SDWebImageMapKit in Frameworks */,
+				001BA28C285CF8740080076D /* URLImage in Frameworks */,
 				00758993283CF44A001FE1F5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +191,7 @@
 			children = (
 				00CEFDE0284494E300124273 /* TrackCell.xib */,
 				00CEFDE22844952F00124273 /* TrackCell.swift */,
+				001BA288285BA8460080076D /* UserDefaults.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -209,6 +216,8 @@
 				00758992283CF44A001FE1F5 /* Alamofire */,
 				003A579E2849CCBE00113A28 /* SDWebImage */,
 				003A57A02849CCBE00113A28 /* SDWebImageMapKit */,
+				001BA28B285CF8740080076D /* URLImage */,
+				001BA28D285CF8740080076D /* URLImageStore */,
 			);
 			productName = "Music Player";
 			productReference = 003A5B7428395D2F00538D6E /* Music Player.app */;
@@ -241,6 +250,7 @@
 			packageReferences = (
 				00758991283CF449001FE1F5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				001BA28A285CF8730080076D /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 003A5B7528395D2F00538D6E /* Products */;
 			projectDirPath = "";
@@ -277,6 +287,7 @@
 				00CEFDDD283FEEA100124273 /* UIViewCotroller + StoryBoard.swift in Sources */,
 				00758995283D40E7001FE1F5 /* SearchResponse.swift in Sources */,
 				00CEFDD8283FE68000124273 /* SearchInteractor.swift in Sources */,
+				001BA289285BA8460080076D /* UserDefaults.swift in Sources */,
 				00CEFDE32844952F00124273 /* TrackCell.swift in Sources */,
 				00601A43284F4C6700E544DC /* CMTime + Extension.swift in Sources */,
 				003A57A4284A7A2200113A28 /* Footer View.swift in Sources */,
@@ -519,6 +530,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		001BA28A285CF8730080076D /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -538,6 +557,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		001BA28B285CF8740080076D /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 001BA28A285CF8730080076D /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		001BA28D285CF8740080076D /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 001BA28A285CF8730080076D /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
 		003A579E2849CCBE00113A28 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 003A579D2849CCBE00113A28 /* XCRemoteSwiftPackageReference "SDWebImage" */;
