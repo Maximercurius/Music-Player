@@ -5,6 +5,7 @@
 <img src="https://github.com/Maximercurius/Music-Player/blob/main/ScreenShot/Music%20Player%202.png" width="300px"/>
 <img src="https://github.com/Maximercurius/Music-Player/blob/main/ScreenShot/Music%20Player%203.png" width="300px"/>
 <img src="https://github.com/Maximercurius/Music-Player/blob/main/ScreenShot/Music%20Player%204.png" width="300px"/>
-
-
 </div>
+
+### About Project :
+Technology stack: Clean Swift Architechture, UIKit, TabBarController, SDWebImage, URLImage, SwiftUI, AVkit, Alamofire.
