@@ -125,22 +125,38 @@
 		003A5B7628395D2F00538D6E /* Music Player */ = {
 			isa = PBXGroup;
 			children = (
-				003A5B7728395D2F00538D6E /* AppDelegate.swift */,
-				003A5B7928395D2F00538D6E /* SceneDelegate.swift */,
 				00CEFDCB283FE5EC00124273 /* Services */,
-				003A5B8B28395E0600538D6E /* MainTabBarController.swift */,
-				001BA2862858765D0080076D /* Library.swift */,
 				0081CC652844C2C0005F9DA8 /* Models */,
 				00CEFDBC283FE4F500124273 /* Search */,
+				007841D428924ECE00759BDF /* Views */,
+				00CEFDDE283FEF3100124273 /* Helpers */,
+				007841D528924F6000759BDF /* System files */,
+			);
+			path = "Music Player";
+			sourceTree = "<group>";
+		};
+		007841D428924ECE00759BDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				003A5B8F2839619600538D6E /* SearchMusicViewController.swift */,
 				003A5B7B28395D2F00538D6E /* ViewController.swift */,
-				00CEFDDE283FEF3100124273 /* Helpers */,
+				003A5B8B28395E0600538D6E /* MainTabBarController.swift */,
+				001BA2862858765D0080076D /* Library.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		007841D528924F6000759BDF /* System files */ = {
+			isa = PBXGroup;
+			children = (
+				003A5B7728395D2F00538D6E /* AppDelegate.swift */,
+				003A5B7928395D2F00538D6E /* SceneDelegate.swift */,
 				003A5B7D28395D2F00538D6E /* Main.storyboard */,
 				003A5B8028395D3300538D6E /* Assets.xcassets */,
 				003A5B8228395D3300538D6E /* LaunchScreen.storyboard */,
 				003A5B8528395D3300538D6E /* Info.plist */,
 			);
-			path = "Music Player";
+			path = "System files";
 			sourceTree = "<group>";
 		};
 		0081CC652844C2C0005F9DA8 /* Models */ = {
@@ -452,7 +468,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SPBFA5A677;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music Player/Info.plist";
+				INFOPLIST_FILE = "Music Player/System files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -484,7 +500,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SPBFA5A677;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music Player/Info.plist";
+				INFOPLIST_FILE = "Music Player/System files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
